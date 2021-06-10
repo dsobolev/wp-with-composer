@@ -1,0 +1,32 @@
+{
+    "name": "dsobolev/wp-composer",
+    "description": "Composer based WP site",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Denis Sobolev",
+            "email": "denis.sobolev@hyperion-tech.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": ">=5.5",
+        
+        "wpackagist-plugin/akismet":"^4.1",
+        "wpackagist-plugin/advanced-custom-fields":"^5.9.3",
+        "wpackagist-theme/twentytwenty":"*"
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "wordpress-install-dir": "wordpress"
+    }
+}
