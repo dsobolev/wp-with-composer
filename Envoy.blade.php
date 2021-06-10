@@ -32,3 +32,12 @@
 
     echo "Cloning repository - completed."
 @endtask
+
+@task('install')
+    echo "Installing dependencies...";
+
+    composer install --prefer-dist
+    cp ../../wp-config.php ./wp-config.php
+
+    echo "Installing dependencies - completed."
+@endtask
