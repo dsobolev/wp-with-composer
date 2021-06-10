@@ -41,3 +41,13 @@
 
     echo "Installing dependencies - completed."
 @endtask
+
+@task('live')
+    echo "Creating symlinks for the live version..."
+
+    cd {{ $deploymentDir }}
+    ln -nfs {{ $deploymentDir }} {{ $serve }}
+    ln -nfs {{ $appDir }}/uploads {{ $serve }}/wp-content/
+
+    echo "Creating symlinks - completed."
+@endtask
