@@ -60,3 +60,11 @@
 
     echo "Cleaned up old deployments."
 @endtask
+
+@story('deploy-local', ['on' => 'local'])
+    dir
+    git
+    install
+    live
+    deployment_cleanup
+@endstory
