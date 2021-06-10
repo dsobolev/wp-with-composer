@@ -23,3 +23,12 @@
 
     echo "Deployment directory - completed."
 @endtask
+
+@task('git')
+    echo "Cloning repository..."
+
+    cd {{ $deploymentDir }}
+    git clone --depth 1 -b {{ $branch }} "{{ $repo }}" {{ $deploymentDir }}
+
+    echo "Cloning repository - completed."
+@endtask
