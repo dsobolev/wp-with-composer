@@ -51,3 +51,12 @@
 
     echo "Creating symlinks - completed."
 @endtask
+
+@task('deployment_cleanup')
+    echo "Cleaning up old deployments..."
+
+    cd {{ $buildsDir }}
+    ls -t | tail -n +4 | xargs rm -rf
+
+    echo "Cleaned up old deployments."
+@endtask
