@@ -14,3 +14,12 @@
     $serve = $appDir . '/current';
     
 @endsetup
+
+@task('dir')
+    echo "New Deployment directory..."
+
+    cd {{ $buildsDir }}
+    mkdir {{ $date }}
+
+    echo "Deployment directory - completed."
+@endtask
