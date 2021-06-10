@@ -68,3 +68,13 @@
     live
     deployment_cleanup
 @endstory
+
+
+@task('update-plugin')
+    cd {{  $deploymentDir  }}
+    wp plugin update {{ $plugin }} --version={{ $pluginVersion }}
+@endtask
+
+@story('update')
+    update-plugin
+@endstory
